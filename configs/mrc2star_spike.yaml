@@ -1,0 +1,8 @@
+mrc: 'mrcfiles/spike.mrc'
+resolution: 2.13
+sidelen: 128
+num_projs: 50000
+snr: 0.1
+power_signal: 0.1
+ctf_precompute: true
+output_dir: 'synthetic_data/spike'

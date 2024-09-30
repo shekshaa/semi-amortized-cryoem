@@ -1,0 +1,14 @@
+data: 'empiar10028' # dataset
+space: "hartley" # hartley or fourier
+r: 1.0 # radius of real mask
+
+epochs_amortized: 15 # number of epochs for auto-encoding
+encoder_lr: 0.0001 # 1e-4
+decoder_lr: 0.005 # 1e-4
+num_rotations: 15 # number of heads
+
+epochs_unamortized: 15 # number of epochs for auto-decoding
+unamortized_decoder_lr: 0.002 # decoder learning rate during auto-decoding
+rot_lr: 0.05 # rotation learning rate
+vol_iters: 1 # number of iterations for volume optimization during auto-decoding
+pose_iters: 5 # number of iterations for pose optimization during auto-decoding

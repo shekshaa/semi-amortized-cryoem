@@ -1,0 +1,7 @@
+slurm
+.vscode
+__pycache__
+*.sh
+synthetic_data/spliceosome
+synthetic_data/spike
+synthetic_data/hsp

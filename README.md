@@ -5,8 +5,7 @@ This is the official PyTorch implementation of the paper [Improving Ab-Initio Cr
 We develop a new approach to Ab-initio <b><span style="font-size: 1.1em;">Cryo</span></b>-EM Reconstruction with 
 <b><span style="font-size: 1.1em;">S</span></b>emi-<b><span style="font-size: 1.1em;">A</span></b>mortized <b><span style="font-size: 1.1em;">P</span></b>ose <b><span style="font-size: 1.1em;">I</span></b>nfer<b><span style="font-size: 1.1em;">ENCE</span></b> (Cryo-SAPIENCE).
 <!-- **S**emi-**A**mortized **P**ose **I**nfer**ence**. -->
-<img src='./media/teaser.png'/>
-<br>
+<img src='./media/teaser.png'/></img>
 
 ## Dependencies
 The code is tested on Python `3.9` and Pytorch `1.12` with cuda version `11.3`.

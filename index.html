@@ -30,6 +30,17 @@
             window.location.reload(true); // Force hard reload
           });
         </script>
+        <script>
+          window.addEventListener('load', function() {
+            const videos = document.querySelectorAll("video source");
+            const cacheBuster = Date.now(); // Unique cache-busting timestamp
+    
+            videos.forEach(function(video) {
+              // Append a cache-busting query string
+              video.src = video.src + '?cb=' + cacheBuster;
+            });
+          });
+        </script>
     </head>
     <body class="container" style="max-width:1000px">
         <!-- Title -->
@@ -178,12 +189,12 @@
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item item-video2">
             <video poster="" id="pose-video1" autoplay controls muted loop height="80%" loading="lazy">
-              <source src="./assets/poses/spliceosome.m4v?v=1.0" type="video/mp4">
+              <source src="./assets/poses/spliceosome.m4v" type="video/mp4">
             </video>
           </div>
           <div class="item item-video3">
             <video poster="" id="pose-video2" autoplay controls muted loop height="80%" loading="lazy">\
-              <source src="./assets/poses/spike.m4v?v=1.0" type="video/mp4">
+              <source src="./assets/poses/spike.m4v" type="video/mp4">
             </video>
           </div>
         </div>

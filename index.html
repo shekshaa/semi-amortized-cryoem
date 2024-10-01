@@ -25,6 +25,11 @@
         <script defer src="static/js/bulma-slider.min.js"></script>
         <script defer src="static/js/index.js"></script>
         <script defer src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+        <script>
+          window.addEventListener('beforeunload', function() {
+            window.location.reload(true); // Force hard reload
+          });
+        </script>
     </head>
     <body class="container" style="max-width:1000px">
         <!-- Title -->
@@ -197,19 +202,5 @@
             </div>
         </div>
     </div>
-  </body>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const videos = document.querySelectorAll("video source");
-      videos.forEach(function(video) {
-        // Check if cache-busting parameter is needed
-        if (!localStorage.getItem(video.src)) {
-          localStorage.setItem(video.src, '1'); // Versioning or flagging
-        } else {
-          // Append cache-busting query string
-          video.src = video.src + '?v=' + localStorage.getItem(video.src);
-        }
-      });
-    });
-  </script>  
+  </body> 
 </html>

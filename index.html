@@ -198,4 +198,18 @@
         </div>
     </div>
   </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const videos = document.querySelectorAll("video source");
+      videos.forEach(function(video) {
+        // Check if cache-busting parameter is needed
+        if (!localStorage.getItem(video.src)) {
+          localStorage.setItem(video.src, '1'); // Versioning or flagging
+        } else {
+          // Append cache-busting query string
+          video.src = video.src + '?v=' + localStorage.getItem(video.src);
+        }
+      });
+    });
+  </script>  
 </html>

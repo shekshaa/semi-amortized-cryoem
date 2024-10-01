@@ -1,0 +1,311 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <title>Cryo-SAPIENCE</title>
+        <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet"> -->
+
+        <link rel="stylesheet" href="static/css/bulma.min.css">
+        <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+        <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+        <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <link rel="stylesheet" href="static/css/index.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+                               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+        <script defer src="static/js/fontawesome.all.min.js"></script>
+        <script src="static/js/bulma-carousel.min.js"></script>
+        <script src="static/js/bulma-slider.min.js"></script>
+        <script src="static/js/index.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+    </head>
+    <body class="container" style="max-width:1200px">
+        <!-- Title -->
+        <div>
+            <div class='row mt-4 mb-2'>
+                <div class='col text-center'>
+                    <!-- <p class="h3 font-weight-bold">Improving Ab-Initio Cryo-EM Reconstruction with Semi-Amortized Pose Inference</p> -->
+                    <p class="h2 font-weight-bold">Cryo-SAPIENCE</p>
+                    <p class="h5">Improving Ab-Initio <span style="font-weight: bold; font-size: 1.2em;">Cryo</span>-EM Reconstruction with <span style="font-weight: bold; font-size: 1.2em;">S</span>emi-<span style="font-weight: bold; font-size: 1.2em;">A</span>mortized <span style="font-weight: bold; font-size: 1.2em;">P</span>ose <span style="font-weight: bold; font-size: 1.2em;">I</span>nfer<span style="font-weight: bold; font-size: 1.2em;">ence</span></p>
+                </div>
+            </div>
+            <div class='row mt-2 mb-4'>
+              <div class='col text-center'>
+                  <p class="h5">NeurIPS 2024</p>
+              </div>
+          </div>             
+            <!-- authors -->
+            <div class='col text-center h5 font-weight mb-3'>
+            <a href="https://shekshaa.github.io/">Shayan Shekarforoush</a><sup>1,2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://davidlindell.com/">David Lindell</a><sup>1,2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://mbrubake.github.io/">Marcus Brubaker</a><sup>1,2,3,4</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="http://www.cs.toronto.edu/~fleet/">David Fleet</a><sup>1,2,3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            </div>
+
+            <!-- affiliations -->
+            <div class='col text-center mt-4 mb-4' >
+            <sup>1</sup>University of Toronto &nbsp;&nbsp;&nbsp; 
+            <sup>2</sup>Vector Institute &nbsp;&nbsp;&nbsp;
+            <sup>3</sup>Google Research &nbsp;&nbsp;&nbsp;
+            <sup>4</sup>York University
+            </div>
+            <div class="col text-center mt-4 mb-4">
+              <div class="publication-links">
+                <!-- PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2406.10455" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2406.10455" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/shekshaa/semi-amortized-cryoem" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
+
+            <section class="hero teaser">
+              <div class="container is-max-desktop">
+                  <img src="assets/teaser.png" alt="MAIN_FIGURE" />
+                  <p class="h7">
+                    Semi-amortization consists of two stages: (i) an auto-encoding stage 
+                    where an image encoder with multiple heads maps the input image to the pose candidate set, 
+                    followed by computing projections by slicing through the volume decoder in Fourier space.
+                    The projections are compared with the input image and the one with the minimum error is used. 
+                    (ii) An auto-decoding stage where pose parameters in axis-angle representation are stored for all images.
+                  </p>
+              </div>
+            </section>
+              
+      </div>
+
+      <div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12 text-center">
+                <div class="row mt-4">
+                    <a href="https://arxiv.org/abs/2206.00746" style="max-width:200px; margin-left:auto; margin-right:auto">
+                        <img src="assets/snapshot.png" alt="paper-snapshot" class="img-thumbnail" width="80%" style="box-shadow: 10px 10px 5px grey;">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-12">
+                <p class="h4 font-weight-bold ">Abstract</p>
+                <p style="line-height:1.4;">
+                  Cryo-EM is an increasingly popular method for determining the atomic resolution 3D structure of macromolecular complexes (eg, proteins) from noisy 2D images captured by an electron microscope.
+                  The computational task is to reconstruct the 3D density of the particle, along with 3D pose of the particle in each 2D image, for which the posterior pose distribution is highly multi-modal. 
+                  Recent developments in cryo-EM have focused on deep learning for which amortized inference has been used to predict pose.  
+                  Here, we address key problems with this approach, and propose a new semi-amortized method in which reconstruction begins with amortized inference and then switches to a form of auto-decoding to refine poses locally using stochastic gradient descent.  
+                  Through evaluation on synthetic datasets, we demonstrate that our method is able to handle multi-modal pose distributions during the amortized inference stage, while the later, more flexible stage of direct pose optimization yields faster and more accurate convergence of poses compared to baselines. 
+                  On experimental data, we show that our approach outperforms the state-of-the-art cryoAI in  speed and reconstruction quality. 
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <section class="hero is-small">
+        <div class="container is-max-desktop">
+          <h2 class="title has-text-centered">Reconstruction Results</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-video2">
+              <video poster="" id="video2" autoplay controls muted loop height="80%">
+                <source src="./assets/hsp_movie.m4v" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video3">
+              <video poster="" id="video3" autoplay controls muted loop height="80%">\
+                <source src="./assets/spliceosome_movie.m4v" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video1">
+              <video poster="" id="video1" autoplay controls muted loop height="80%">
+                <source src="./assets/spike_movie.m4v" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video4">
+              <video poster="" id="video4" autoplay controls muted loop height="80%">\
+                <source src="./assets/empiar10028_movie.m4v" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+    </section>
+    <hr>
+    <section class="hero is-small">
+      <div class="container is-max-desktop">
+        <h2 class="title has-text-centered">Semi-Amortized vs. Fully-Amortized</h2>
+        <p>
+          For synthetic datasets of Spliceosome and Spike, we visualize the approximate log posterior for three particles (marginalized over in-plane rotations) as view-direction distribution over a HEALPix uniform grid on a unit sphere \( S^2 \). 
+          After Gnomonic projection to 2D, we show the neighborhood around optimization trajectories. Each cell shows an area of 10 degrees. Below each example, the error of final estimate of each method is provided.
+        </p>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video2">
+            <video poster="" id="pose-video1" autoplay controls muted loop height="80%">
+              <source src="./assets/poses/spliceosome.m4v" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video3">
+            <video poster="" id="pose-video2" autoplay controls muted loop height="80%">\
+              <source src="./assets/poses/spike.m4v" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+  </section>
+
+    <!-- <div>
+      <hr>
+      <div class="row text-center">
+        <div class="col">
+            <p class="h2">Motivating 2D Example</p>
+        </div>
+      </div>
+      <div class="row mt-1">
+        <div class="col">
+          <p class="text-break">
+            When employing a coarse-to-fine training strategy to train a BACON, 
+            namely outputs at each scale is optimized in separate rounds of optimization, 
+            the network completely forgets the learned representations of
+            coarse scale outputs from previous optimization rounds. 
+            In fact, reconstructions at different scales are highly coupled, 
+            since new layers can establish new frequencies anywhere within the band limit. 
+            We modify the architecture by adding <b>skip connections</b> and 
+            propose a new <b>the initialization scheme</b> to make such coordinate network 
+            amenable to coarse-to-fine multiscale reconstruction scenarios.
+          </p>
+      </div>
+      <div class="row text-center">
+        <div class="col">
+          <img src="images/image_fitting.png" width="80%" alt="image fitting">
+        </div>
+      </div>
+    </div>  
+  </div> -->
+  <!-- <div>
+    <hr>
+    <div class="row text-center">
+      <div class="col">
+          <p class="h2">Cryo-EM</p>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-md-6 col-sm-6 col-xs-12 mt-3">
+        <p class="text-break">
+        <b>3D Reconstruction.</b> Single particle cryo-EM is an increasingly popular experimental technique to recover 
+        the 3D structure of macromolecular complexes, such as proteins. 
+        This has enabled atomic or near-atomic resolution reconstruction of challenging structures. 
+        Multiscale, coarse-to-fine reconstructions has long played a critical role in cryo-EM estimation, 
+        making it an ideal testbed for our proposed methods.
+        <br>
+        <br>
+        <b>Coarse-to-fine.</b> In practice, naively optimizing for both the poses and potential map 
+        suffers from <b>poor local minima</b> due to high frequency noise.
+        To avoid this, we start from estimating low frequency content of the map as it has higher SNR. 
+        This allows for reliable initial pose estimation. We then further refine to
+        higher frequency content which allows for more accurate pose estimation.
+        Previous approaches employ variants of this technique, called <i>Frequency Marching</i>. 
+        <br>
+        <br>
+        <b> Results.</b> We evaluate our proposal on two synthetic datasets obtained from PDB1ol5 and PDB4ake. 
+        From low to high scales, increasingly more structural features are resolved. 
+        The low-scale reconstructions capture only the global and low-resolution features, 
+        whereas the full-scale ones contain fine-grained details. 
+      </p>
+    </div>
+        
+    <div class="col-md-6 col-sm-6 col-xs-12 mt-3">
+        <img src="images/pdb1ol5_all_scales.gif" class="img-fluid" alt="pdb1ol5_all">
+        <img src="images/pdb4ake_all_scales.gif" class="img-fluid" alt="pdb4ke_all">
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-4 col-sm-4 col-xs-12 mt-1">
+      <img src="images/pdb1ol5_evolution.gif" class="img-fluid" alt="pdb1ol5_evo">
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12 mt-1">
+      <img src="images/pdb4ake_evolution.gif" class="img-fluid" alt="pdb4ke_evo">
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12 mt-1">
+      <p class="text-break">
+        <b>Evolution.</b> The coarse-to-fine evolution 
+        of the reconstructed structure for each dataset during training.
+        We first start from a random structure, and then obtain a coarse reconstruction 
+        which will be further refined to fine-grained details at later stages (i.e. high-resolution).
+      </p>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-8 col-sm-8 col-xs-12 mt-3">
+      <video width="80%" src="images/model_fit2_compressed.mp4" ,="" type="vid" autoplay="" muted="" loop=""></video>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12 mt-3">
+      <p class="text-break">
+        <b>Model Fitting.</b> We also use Chimera to fit the available atomic model 
+        of pdb4ake into the corresponding final reconstruction. 
+        As shown in video model_fit.mp4, various secondary structures, such as α-helices,
+        are well aligned with the reconstructed 3D density map.
+      </p>
+    </div>
+    </div>
+</div> -->
+    
+
+    <!-- <div>
+        <hr>
+        <div class='row text-center'>
+            <div class='col'>
+                <p class='h2 mr-3'>Bibtex</p>
+            </div>
+        </div>
+        <textarea id="bibtex" class="form-control" rows="6" cols="50" readonly>
+          @article{shekarforoush2022residual,
+            title={Residual Multiplicative Filter Networks for Multiscale Reconstruction},
+            author={Shekarforoush, Shayan and Lindell, David B and Fleet, David J and Brubaker, Marcus A},
+            journal={arXiv preprint arXiv:2206.00746},
+            year={2022}
+          }</textarea>
+    </div> -->
+
+
+        <!-- Ack -->
+        <div>
+            <hr>
+            <div class='row mb-5 text-center'>
+                <div class='col'>
+                    <!-- <p class='h2'>Acknowledgements</p> -->
+                    <div class='text-left'>
+                        <p>The design of this project page is based on <a href="https://www.guandaoyang.com/PointFlow/">this</a> website.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

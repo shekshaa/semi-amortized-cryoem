@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <title>Cryo-SAPIENCE</title>
+        <title>CryoSPIN</title>
         <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet"> -->
 
         <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -48,8 +48,8 @@
             <div class='row mt-4 mb-2'>
                 <div class='col text-center'>
                     <!-- <p class="h3 font-weight-bold">Improving Ab-Initio Cryo-EM Reconstruction with Semi-Amortized Pose Inference</p> -->
-                    <p class="h2 font-weight-bold">Cryo-SAPIENCE</p>
-                    <p class="h5">Improving Ab-Initio <span style="font-weight: bold; font-size: 1.2em;">Cryo</span>-EM Reconstruction with <span style="font-weight: bold; font-size: 1.2em;">S</span>emi-<span style="font-weight: bold; font-size: 1.2em;">A</span>mortized <span style="font-weight: bold; font-size: 1.2em;">P</span>ose <span style="font-weight: bold; font-size: 1.2em;">I</span>nfer<span style="font-weight: bold; font-size: 1.2em;">ence</span></p>
+                    <p class="h2 font-weight-bold">CryoSPIN</p>
+                    <p class="h5">Improving Ab-Initio <u><span style="font-weight: bold; font-size: 1.2em;">Cryo</span></u>-EM Reconstruction with <u><span style="font-weight: bold; font-size: 1.2em;">S</span></u>emi-Amortized <u><span style="font-weight: bold; font-size: 1.2em;">P</span></u>ose <u><span style="font-weight: bold; font-size: 1.2em;">In</span></u>ference</p>
                 </div>
             </div>
             <div class='row mt-2 mb-4'>
@@ -112,7 +112,7 @@
               <div class="container is-max-desktop">
                   <img src="assets/teaser.png" alt="MAIN_FIGURE" />
                   <p class="h7">
-                    Semi-amortization consists of two stages: (i) an auto-encoding stage 
+                    CryoSPIN consists of two stages: (i) an auto-encoding stage 
                     where an image encoder with multiple heads maps the input image to the pose candidate set, 
                     followed by computing projections by slicing through the volume decoder in Fourier space.
                     The projections are compared with the input image and the one with the minimum error is used. 
@@ -137,11 +137,11 @@
                 <p class="h4 font-weight-bold ">Abstract</p>
                 <p style="line-height:1.4;">
                   Cryo-EM is an increasingly popular method for determining the atomic resolution 3D structure of macromolecular complexes (eg, proteins) from noisy 2D images captured by an electron microscope.
-                  The computational task is to reconstruct the 3D density of the particle, along with 3D pose of the particle in each 2D image, for which the posterior pose distribution is highly multi-modal. 
-                  Recent developments in cryo-EM have focused on deep learning for which amortized inference has been used to predict pose.  
-                  Here, we address key problems with this approach, and propose a new semi-amortized method in which reconstruction begins with amortized inference and then switches to a form of auto-decoding to refine poses locally using stochastic gradient descent.  
-                  Through evaluation on synthetic datasets, we demonstrate that our method is able to handle multi-modal pose distributions during the amortized inference stage, while the later, more flexible stage of direct pose optimization yields faster and more accurate convergence of poses compared to baselines. 
-                  On experimental data, we show that our approach outperforms the state-of-the-art cryoAI in  speed and reconstruction quality. 
+                  The computational task is to reconstruct the 3D density of the particle, along with 3D pose of the particle in each 2D image, for which the posterior pose distribution is highly multi-modal.  
+                  Recent developments in cryo-EM have focused on deep learning for which amortized inference has been used to predict pose. 
+                  Here, we address key problems with this approach, and propose a new semi-amortized method, cryoSPIN, in which reconstruction begins with amortized inference and then switches to a form of auto-decoding to refine poses locally using stochastic gradient descent.  
+                  Through evaluation on synthetic datasets, we demonstrate that cryoSPIN is able to handle multi-modal pose distributions during the amortized inference stage, while the later, more flexible stage of direct pose optimization yields faster and more accurate convergence of poses compared to baselines. 
+                  On experimental data, we show that cryoSPIN outperforms the state-of-the-art cryoAI in speed and reconstruction quality.
                 </p>
             </div>
         </div>
@@ -203,7 +203,7 @@
   <hr>
   <section class="hero is-small">
     <div class="container is-max-desktop">
-      <h2 class="title has-text-centered">Multi-modal pose distribution</h2>
+      <h2 class="title has-text-centered">Multi-modal Pose Posterior</h2>
       <p>
         We compare our multi-head encoder which return multiple pose candidates per-image with cryoAI encoder which obtains two pose estimates using input augmentation.
         We plot the pose estimates by each method over the approximate (log) pose posterior (marginalized over in-plane rotations) visualized over a uniform grid on the unit sphere.

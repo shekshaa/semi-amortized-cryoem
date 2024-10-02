@@ -1,19 +1,19 @@
-# Cryo-SAPIENCE | NeurIPS (2024)
+# CryoSPIN | NeurIPS (2024)
 
-### [Project Page]() | [Arxiv](https://arxiv.org/abs/2406.10455)
+### [Project Page](https://shekshaa.github.io/semi-amortized-cryoem) | [Arxiv](https://arxiv.org/abs/2406.10455)
 This is the official PyTorch implementation of the paper [Improving Ab-Initio Cryo-EM Reconstruction with Semi-Amortized Pose Inference](https://arxiv.org/abs/2406.10455).
-We develop a new approach to Ab-initio <b><span style="font-size: 1.1em;">Cryo</span></b>-EM Reconstruction with 
-<b><span style="font-size: 1.1em;">S</span></b>emi-<b><span style="font-size: 1.1em;">A</span></b>mortized <b><span style="font-size: 1.1em;">P</span></b>ose <b><span style="font-size: 1.1em;">I</span></b>nfer<b><span style="font-size: 1.1em;">ENCE</span></b> (Cryo-SAPIENCE).
+We develop a new approach to Ab-initio <u><b><span style="font-size: 1.1em;">Cryo</span></b></u>-EM Reconstruction with 
+<b><span style="font-size: 1.1em;">S</span></b>emi-Amortized <u><b><span style="font-size: 1.1em;">P</span></b></u>ose <u><b><span style="font-size: 1.1em;">In</span></b></u>nference (CryoSPIN).
 <!-- **S**emi-**A**mortized **P**ose **I**nfer**ence**. -->
 <img src='./media/teaser.png'/></img>
 
 ## Dependencies
 The code is tested on Python `3.9` and Pytorch `1.12` with cuda version `11.3`.
-Please run following commands to create a compatible (mini)conda environment called `semi-amortized`:
+Please run following commands to create a compatible (mini)conda environment called `cryoSPIN`:
 ```
 # create env
-conda create -n semi-amortized python=3.9
-conda activate semi-amortized
+conda create -n cryoSPIN python=3.9
+conda activate cryoSPIN
 
 # pytorch
 pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113

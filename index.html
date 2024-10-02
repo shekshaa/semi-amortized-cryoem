@@ -20,16 +20,11 @@
 
         <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-        <!-- <script defer src="static/js/fontawesome.all.min.js"></script> -->
+        <script defer src="static/js/fontawesome.all.min.js"></script>
         <script defer src="static/js/bulma-carousel.min.js"></script>
         <script defer src="static/js/bulma-slider.min.js"></script>
         <script defer src="static/js/index.js"></script>
         <script defer src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
-        <script>
-          window.addEventListener('beforeunload', function() {
-            window.location.reload(true); // Force hard reload
-          });
-        </script>
         <script>
           window.addEventListener('load', function() {
             const videos = document.querySelectorAll("video");
@@ -133,7 +128,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-12 text-center">
                 <div class="row mt-4">
-                    <a href="https://arxiv.org/abs/2206.00746" style="max-width:200px; margin-left:auto; margin-right:auto">
+                    <a href="https://arxiv.org/abs/2406.10455" style="max-width:200px; margin-left:auto; margin-right:auto">
                         <img src="assets/snapshot.png" alt="paper-snapshot" class="img-thumbnail" width="80%" style="box-shadow: 10px 10px 5px grey;">
                     </a>
                 </div>
@@ -157,22 +152,22 @@
           <h2 class="title has-text-centered">Reconstruction Results</h2>
           <div id="results-carousel" class="carousel results-carousel">
             <div class="item item-video2">
-              <video poster="" id="video2" autoplay controls muted loop height="80%" loading="lazy">
+              <video poster="" id="video2" autoplay controls muted loop height="80%">
                 <source src="./assets/hsp_movie.m4v" type="video/mp4">
               </video>
             </div>
             <div class="item item-video3">
-              <video poster="" id="video3" autoplay controls muted loop height="80%" loading="lazy">\
+              <video poster="" id="video3" autoplay controls muted loop height="80%">\
                 <source src="./assets/spliceosome_movie.m4v" type="video/mp4">
               </video>
             </div>
             <div class="item item-video1">
-              <video poster="" id="video1" autoplay controls muted loop height="80%" loading="lazy">
+              <video poster="" id="video1" autoplay controls muted loop height="80%">
                 <source src="./assets/spike_movie.m4v" type="video/mp4">
               </video>
             </div>
             <div class="item item-video4">
-              <video poster="" id="video4" autoplay controls muted loop height="80%" loading="lazy">\
+              <video poster="" id="video4" autoplay controls muted loop height="80%">\
                 <source src="./assets/empiar10028_movie.m4v" type="video/mp4">
               </video>
             </div>
@@ -187,28 +182,82 @@
           We branch the running reconstruction into two after a certain number of epochs: 
           the first continues using the encoder <span style="color: red;">(Fully-Amortized)</span> 
           while the second switches to direct pose optimization <span style="color: blue;">(Semi-Amortized)</span>. 
-          We mark the trajectory of pose estimates for example images over a heat map showing the approximate (log) pose posterior (marginalized over in-plane rotations) as a view-direction distribution on a uniform grid of the unit sphere \( S^2 \). 
-          After Gnomonic projection to 2D, we show the neighborhood around optimization trajectories.  
+          We mark the trajectory of pose estimates for example images over a heat map of the approximate (log) pose posterior (marginalized over in-plane rotations to get view-direction) on a uniform grid of the unit sphere \( S^2 \). 
+          After Gnomonic projection, we show the neighborhood around optimization trajectories.  
           Each cell shows an area of 10 degrees and the error of final estimates are also provided for each example.
         </p>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item item-video2">
-            <video poster="" id="pose-video1" autoplay controls muted loop height="80%" loading="lazy">
+            <video poster="" id="pose-video1" autoplay controls muted loop height="80%">
               <source src="./assets/poses/spliceosome.m4v" type="video/mp4">
             </video>
           </div>
           <div class="item item-video3">
-            <video poster="" id="pose-video2" autoplay controls muted loop height="80%" loading="lazy">\
+            <video poster="" id="pose-video2" autoplay controls muted loop height="80%">\
               <source src="./assets/poses/spike.m4v" type="video/mp4">
             </video>
           </div>
         </div>
       </div>
   </section>
-
-    <!-- Ack -->
+  <hr>
+  <section class="hero is-small">
+    <div class="container is-max-desktop">
+      <h2 class="title has-text-centered">Multi-modal pose distribution</h2>
+      <p>
+        We compare our multi-head encoder which return multiple pose candidates per-image with cryoAI encoder which obtains two pose estimates using input augmentation.
+        We plot the pose estimates by each method over the approximate (log) pose posterior (marginalized over in-plane rotations) visualized over a uniform grid on the unit sphere.
+        Clearly, cryoAI encoder fails to handle multi-modality of the pose distribution while our method is able to account for the uncertainty by capturing multiple modes.
+      </p>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video2">
+          <video poster="" id="multimodal-video1" autoplay controls muted loop height="80%">
+            <source src="./assets/poses/hsp_3.m4v" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="multimodal-video2" autoplay controls muted loop height="80%">\
+            <source src="./assets/poses/hsp_15.m4v" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video1">
+          <video poster="" id="multimodal-video3" autoplay controls muted loop height="80%">\
+            <source src="./assets/poses/hsp_42.m4v" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--BibTex citation -->
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{shekarforoush2024improving,
+          title={Improving Ab-Initio Cryo-EM Reconstruction with Semi-Amortized Pose Inference},
+          author={Shekarforoush, Shayan and Lindell, David B and Brubaker, Marcus A and Fleet, David J},
+          journal={arXiv preprint arXiv:2406.10455},
+          year={2024}
+        }
+      </code></pre>
+    </div>
+  </section> -->
+  <hr>
+    <div class="row">
+        <div class="col">
+            <h3>Citation</h2>
+            <code>
+              @article{shekarforoush2024improving,<br>
+                &nbsp; &nbsp; &nbsp; title={Improving Ab-Initio Cryo-EM Reconstruction with Semi-Amortized Pose Inference},<br>
+                &nbsp; &nbsp; &nbsp; author={Shekarforoush, Shayan and Lindell, David B and Brubaker, Marcus A and Fleet, David J},<br>
+                &nbsp; &nbsp; &nbsp; journal={arXiv preprint arXiv:2406.10455},<br>
+                &nbsp; &nbsp; &nbsp; year={2024}<br>
+            }
+          </code>
+        </div>
+      </div>
+    <hr>
     <div>
-        <hr>
         <div class='row mb-5 text-center'>
             <div class='col'>
                 <!-- <p class='h2'>Acknowledgements</p> -->
@@ -219,4 +268,4 @@
         </div>
     </div>
   </body> 
-</html>
+</html> 

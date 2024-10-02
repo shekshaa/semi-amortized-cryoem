@@ -1,4 +1,4 @@
-# CryoSPIN ❄️߷
+<h1> CryoSPIN ❄️<span style="color:rgb(18, 200, 18)">߷</span></h1>
 
 ### [Project Page](https://shekshaa.github.io/semi-amortized-cryoem) | [Arxiv](https://arxiv.org/abs/2406.10455)
 > CryoSPIN: Improving Ab-Initio <ins><b><span style="font-size: 1.1em;">Cryo</span></b></ins>-EM Reconstruction with <ins><b><span style="font-size: 1.1em;">S</span></b></ins>emi-Amortized <ins><b><span style="font-size: 1.1em;">P</span></b></ins>ose <ins><b><span style="font-size: 1.1em;">In</span></b></ins>ference \

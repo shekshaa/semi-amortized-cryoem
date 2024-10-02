@@ -1,9 +1,14 @@
-# CryoSPIN | NeurIPS (2024)
+# CryoSPIN ❄️߷
 
 ### [Project Page](https://shekshaa.github.io/semi-amortized-cryoem) | [Arxiv](https://arxiv.org/abs/2406.10455)
-This is the official PyTorch implementation of the paper [Improving Ab-Initio Cryo-EM Reconstruction with Semi-Amortized Pose Inference](https://arxiv.org/abs/2406.10455).
-We develop a new approach to Ab-initio <ins><b><span style="font-size: 1.1em;">Cryo</span></b></ins>-EM Reconstruction with 
-<ins><b><span style="font-size: 1.1em;">S</span></b></ins>emi-Amortized <ins><b><span style="font-size: 1.1em;">P</span></b></ins>ose <ins><b><span style="font-size: 1.1em;">In</span></b></ins>ference (CryoSPIN).
+> CryoSPIN: Improving Ab-Initio <ins><b><span style="font-size: 1.1em;">Cryo</span></b></ins>-EM Reconstruction with <ins><b><span style="font-size: 1.1em;">S</span></b></ins>emi-Amortized <ins><b><span style="font-size: 1.1em;">P</span></b></ins>ose <ins><b><span style="font-size: 1.1em;">In</span></b></ins>ference
+<br>
+> Shayan Shekarforoush, David Lindell, Marcus Brubaker, David Fleet
+<br>
+> NeurIPS 2024
+
+<b>TL;DR</b>: We develop a new approach to ab-initio cryo-EM 3D reconstruction using semi-amortization to accelerate pose convergence and multi-head encoder to handle pose uncertainty.
+
 <!-- **S**emi-**A**mortized **P**ose **I**nfer**ence**. -->
 <img src='./media/teaser.png'/></img>
 

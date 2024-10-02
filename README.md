@@ -2,8 +2,8 @@
 
 ### [Project Page](https://shekshaa.github.io/semi-amortized-cryoem) | [Arxiv](https://arxiv.org/abs/2406.10455)
 This is the official PyTorch implementation of the paper [Improving Ab-Initio Cryo-EM Reconstruction with Semi-Amortized Pose Inference](https://arxiv.org/abs/2406.10455).
-We develop a new approach to Ab-initio <u><b><span style="font-size: 1.1em;">Cryo</span></b></u>-EM Reconstruction with 
-<b><span style="font-size: 1.1em;">S</span></b>emi-Amortized <u><b><span style="font-size: 1.1em;">P</span></b></u>ose <u><b><span style="font-size: 1.1em;">In</span></b></u>nference (CryoSPIN).
+We develop a new approach to Ab-initio <ins><b><span style="font-size: 1.1em;">Cryo</span></b></ins>-EM Reconstruction with 
+<ins><b><span style="font-size: 1.1em;">S</span></b></ins>emi-Amortized <ins><b><span style="font-size: 1.1em;">P</span></b></ins>ose <ins><b><span style="font-size: 1.1em;">In</span></b></ins>ference (CryoSPIN).
 <!-- **S**emi-**A**mortized **P**ose **I**nfer**ence**. -->
 <img src='./media/teaser.png'/></img>
 
